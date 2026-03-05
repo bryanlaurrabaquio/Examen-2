@@ -24,5 +24,13 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+override fun onStart() {
+    super.onStart()
+    Log.i("Start","Iniciado")
+}
+
+override fun onResume() {
+    super.onResume()
+    Log.i("Resume","Continuado")
 
 }
