@@ -15,20 +15,19 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
+        val etUsername = findViewById<EditText>(R.id.etUsername)
         val etPassword = findViewById<EditText>(R.id.etPassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
 
         btnLogin.setOnClickListener {
-
+            val username = etUsername.text.toString()
             val password = etPassword.text.toString()
 
             if (password == "abc123") {
-
                 val intent = Intent(this, ProfileActivity::class.java)
+                intent.putExtra("USERNAME", username)
                 startActivity(intent)
-
             } else {
-
                 Toast.makeText(
                     this,
                     "Contraseña incorrecta",
